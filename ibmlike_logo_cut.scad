@@ -7,13 +7,14 @@ line_offset = 3;
 
 base_h = 5;
 
+union() {
 // 文字から横線部分を抜く
 difference() {
 
     // 文字
     linear_extrude(char_h)
     text("CSA", font="IBM Block Serif", size=char_size);
-
+    
     // 横線部分
     translate([0, 0, base_h])
     union() {
@@ -25,3 +26,6 @@ difference() {
     }
 }
 
+translate([150, 38, 0])
+    cube([30, 3, char_h]);
+}
