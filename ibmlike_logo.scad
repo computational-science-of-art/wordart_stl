@@ -1,15 +1,20 @@
 char_size = 100;
 char_h = 10;
 
-line_width = 10;
-line_pitch = 16;
-line_offset = 5;
+line_width = 18/3;
+line_pitch = 18/3 - 0.2;
+line_offset = 3;
 
 base_h = 5;
 
+// 文字から横線部分を抜く
 difference() {
+
+    // 文字
     linear_extrude(char_h)
-    text("CSA", font="Ricty", size=char_size);
+    text("CSA", font="IBM Block Serif", size=char_size);
+    
+    // 横線部分
     translate([0, 0, base_h])
     union() {
         translate([0, line_offset, 0])
